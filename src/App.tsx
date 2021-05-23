@@ -1,8 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  useEffect(() => {
+    fetch("http://localhost:3001", {})
+      .then((response) => response.text())
+      .then((response) => {
+        console.log(response);
+      });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
